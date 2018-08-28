@@ -13,10 +13,32 @@ xmlns:form="sap.ui.layout.form"
 					<Label text="Address"/>
 					<Text text="{/address}"/>
 					<Label text="City"/>
-					<Text text="{/city}"/>
+					<Text id="idCity"/>
+					<Label text="Departments"/>
+					<ComboBox>
+					  <items>
+					    <core:Item text="{/departments/0/dept}"/>
+					    <core:Item text="{/departments/1/dept}"/>
+					    <core:Item text="{/departments/2/dept}"/>
+					  </items>
+					</ComboBox>
+					<Label text="Departments - Element binding"/>
+					<ComboBox binding="{/departments}">
+					  <items>
+					    <core:Item text="{0/dept}"/>
+					    <core:Item text="{1/dept}"/>
+					    <core:Item text="{2/dept}"/>
+					  </items>
+					</ComboBox>
+					
+					<Label text="Departments -Aggregation binding"/>
+					<ComboBox items="{/departments}">
+					  <items>
+					    <core:Item text="{dept}"/>					   
+					  </items>
+					</ComboBox>
 				</form:content>
 			</form:SimpleForm>
-		</content>
-	
+		</content>	
 	</Page>
 </core:View>

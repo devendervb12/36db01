@@ -13,6 +13,14 @@ sap.ui.controller("zdb01.CompanyData", {
       
     // set the visibility of the model 
       this.getView().setModel(oModel);
+     
+    // refering to Text control  
+     var otxt =  this.getView().byId("idCity");
+  
+    // property binding 
+     otxt.bindProperty("text", "/city");
+   //  otxt.setText("/city");
+      
 	},
 
 /**
